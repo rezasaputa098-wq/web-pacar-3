@@ -1,86 +1,95 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A Little Cat For You 🐾</title>
+<title>For Nuraisyah 🐾</title>
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Segoe UI", sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI", sans-serif;
 }
 
+
 body{
-    height:100vh;
-    overflow:hidden;
-    background:linear-gradient(135deg,#fff5f5,#fffaf0);
-    display:flex;
-    justify-content:center;
-    align-items:center;
+height:100vh;
+overflow:hidden;
+background:linear-gradient(135deg,#fff4f4,#fff9ed);
 }
 
 
 .scene{
-    width:100%;
-    height:100vh;
-    position:relative;
-    text-align:center;
-    overflow:hidden;
+height:100vh;
+position:relative;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
 
-.title{
-    position:absolute;
-    top:25%;
-    width:100%;
-    font-size:28px;
-    color:#765858;
-    letter-spacing:1px;
+.content{
+position:absolute;
+top:20%;
+width:90%;
+text-align:center;
+z-index:5;
+}
+
+
+h1{
+font-size:32px;
+color:#806060;
 }
 
 
 #text{
-    margin-top:20px;
-    font-size:18px;
-    color:#8b6b6b;
-    min-height:80px;
-    padding:20px;
+margin-top:20px;
+font-size:18px;
+color:#987777;
+min-height:90px;
+line-height:1.7;
 }
 
-
-/* tombol */
 
 button{
-    border:none;
-    padding:14px 25px;
-    border-radius:30px;
-    background:#dca6a6;
-    color:white;
-    cursor:pointer;
-    font-size:15px;
-    box-shadow:0 10px 20px #dca6a655;
+
+background:#dba4a4;
+color:white;
+border:none;
+padding:14px 28px;
+border-radius:40px;
+cursor:pointer;
+font-size:15px;
+
+box-shadow:0 10px 25px #dba4a455;
+
 }
 
 
 
-/* kucing */
+/* KUCING */
 
 .cat{
-    position:absolute;
-    bottom:90px;
-    left:-100px;
-    font-size:70px;
-    cursor:pointer;
-    animation:walk 8s linear infinite;
+
+position:absolute;
+bottom:80px;
+left:-100px;
+font-size:75px;
+cursor:pointer;
+animation:jalan 8s linear infinite;
+z-index:3;
+
 }
 
 
-@keyframes walk{
+@keyframes jalan{
 
 0%{
 left:-100px;
@@ -98,54 +107,65 @@ left:110%;
 
 
 
+/* paw */
+
 .paw{
+
 position:absolute;
 font-size:20px;
-opacity:.4;
-animation:fall 5s linear infinite;
+opacity:.5;
+animation:turun 5s linear;
+
 }
 
 
-@keyframes fall{
+@keyframes turun{
 
 from{
-transform:translateY(-50px);
+top:-50px;
 }
 
 to{
-transform:translateY(100vh);
+top:100vh;
 }
 
 }
 
 
 
-/* card */
+
+
+/* cards */
+
 
 .cards{
 
 display:none;
-position:absolute;
-top:20%;
-width:100%;
+margin-top:20px;
+
 }
 
 
 .card{
 
 background:white;
-width:260px;
+width:270px;
 margin:15px auto;
 padding:20px;
-border-radius:20px;
-box-shadow:0 15px 40px #0001;
 
-animation:up 1s;
+border-radius:25px;
+
+box-shadow:0 15px 40px #0002;
+
+animation:muncul 1s;
+
+color:#765858;
 
 }
 
 
-@keyframes up{
+
+@keyframes muncul{
 
 from{
 opacity:0;
@@ -161,34 +181,54 @@ transform:translateY(0);
 
 
 
-/* surat */
 
+
+/* surat */
 
 .letter{
 
 display:none;
 position:absolute;
-top:15%;
+top:12%;
 width:100%;
-padding:30px;
+padding:25px;
+z-index:10;
 
 }
+
 
 
 .paper{
 
-background:#fff;
+background:white;
 max-width:450px;
 margin:auto;
 padding:30px;
+
 border-radius:25px;
+
 line-height:1.8;
-box-shadow:0 20px 50px #0002;
+
 color:#765858;
+
+box-shadow:0 20px 50px #0003;
 
 }
 
 
+
+
+#letterText{
+
+min-height:200px;
+
+}
+
+
+
+
+
+/* ending */
 
 .ending{
 
@@ -196,10 +236,22 @@ display:none;
 position:absolute;
 top:35%;
 width:100%;
+text-align:center;
 font-size:30px;
-color:#b56b7a;
+color:#b46f80;
+z-index:20;
 
 }
+
+
+.small{
+
+font-size:18px;
+margin-top:20px;
+
+}
+
+
 
 
 
@@ -207,30 +259,40 @@ color:#b56b7a;
 
 position:absolute;
 font-size:30px;
-animation:heart 3s infinite;
+
+animation:naik 3s linear forwards;
 
 }
 
 
 
-@keyframes heart{
+@keyframes naik{
 
 0%{
-transform:translateY(0) scale(1);
+
+bottom:0;
 opacity:1;
+transform:scale(1);
+
 }
+
 
 100%{
-transform:translateY(-300px) scale(2);
+
+bottom:100vh;
 opacity:0;
+transform:scale(2);
+
 }
 
 }
+
 
 
 </style>
 
 </head>
+
 
 
 <body>
@@ -239,23 +301,23 @@ opacity:0;
 <div class="scene">
 
 
-<div class="title">
+<div class="content">
+
+
+<h1>🐾 For Nuraisyah</h1>
+
 
 <div id="text"></div>
 
-<button onclick="start()">ikuti kucingnya 🐾</button>
 
-</div>
-
-
-
-<div class="cat" onclick="petCat()">
-🐈
-</div>
+<button id="startBtn" onclick="startStory()">
+ikuti kucingnya 🤍
+</button>
 
 
 
 <div class="cards">
+
 
 <div class="card">
 🐾 aku suka cara kamu cerita hal random
@@ -268,25 +330,44 @@ opacity:0;
 
 
 <div class="card">
-🐾 aku suka kamu tetap jadi diri kamu sendiri
+🐾 aku suka cara kamu memperlakukan aku
 </div>
 
 
 </div>
+
+
+</div>
+
+
+
+
+<div class="cat" onclick="clickCat()">
+
+🐈
+
+</div>
+
+
 
 
 
 <div class="letter">
 
+
 <div class="paper">
+
 
 <div id="letterText"></div>
 
 
 <br>
 
+
 <button onclick="finish()">
-lanjut 🤍
+
+lanjut 🐾
+
 </button>
 
 
@@ -297,22 +378,38 @@ lanjut 🤍
 
 
 
+
+
 <div class="ending">
 
+
 <div>
-💗
+
+💗💗💗
+
 </div>
 
-thank you for being you
+
+Thank you for being you, Nuraisyah
+
+
+<div class="small">
+
+
+kamu selalu cantik dengan caramu sendiri 🤍
+
 
 <br>
 
-<span style="font-size:20px">
+
 love u 🐾
-</span>
+
+</div>
 
 
 </div>
+
+
 
 
 </div>
@@ -324,40 +421,58 @@ love u 🐾
 <script>
 
 
+
 let intro=[
-"hai kamu...",
+
+"hai Nuraisyah...",
+
 "aku punya sesuatu kecil buat kamu",
-"jadi jangan buru-buru pergi ya 🐾"
+
+"buat kamu yang selalu cantik dengan caramu sendiri 🐾",
+
+"jadi jangan buru-buru pergi ya 🤍"
+
 ];
 
 
-let i=0;
+
+let index=0;
 
 
-function typeIntro(){
 
-if(i<intro.length){
+function showIntro(){
 
-document.getElementById("text").innerHTML=intro[i];
 
-i++;
+if(index<intro.length){
 
-setTimeout(typeIntro,1500);
+
+document.getElementById("text").innerHTML=intro[index];
+
+
+index++;
+
+
+setTimeout(showIntro,1700);
+
 
 }
 
+
 }
 
 
-typeIntro();
+
+showIntro();
 
 
 
 
 
-function start(){
 
-document.querySelector("button").style.display="none";
+function startStory(){
+
+
+document.getElementById("startBtn").style.display="none";
 
 
 document.querySelector(".cards").style.display="block";
@@ -365,9 +480,15 @@ document.querySelector(".cards").style.display="block";
 
 setTimeout(()=>{
 
+
 document.querySelector(".letter").style.display="block";
 
-},5000);
+
+typeLetter();
+
+
+},4500);
+
 
 
 }
@@ -376,9 +497,12 @@ document.querySelector(".letter").style.display="block";
 
 
 
-function petCat(){
+
+function clickCat(){
+
 
 let cat=document.querySelector(".cat");
+
 
 cat.innerHTML="😺";
 
@@ -387,7 +511,8 @@ setTimeout(()=>{
 
 cat.innerHTML="🐈";
 
-},1000);
+},800);
+
 
 
 }
@@ -396,22 +521,52 @@ cat.innerHTML="🐈";
 
 
 
-let letter=
-"aku nggak janji semuanya selalu sempurna...<br><br>"+
-"tapi aku ingin terus belajar ngerti kamu.<br><br>"+
+
+
+let message=
+
+"Nuraisyah, aku nggak janji semuanya selalu sempurna...<br><br>"+
+
+"tapi aku ingin terus belajar ngerti kamu dan tumbuh bersama kamu.<br><br>"+
+
 "aku suka cara kamu memperlakukan aku, "+
 "hal kecil yang mungkin kamu anggap biasa.<br><br>"+
-"semoga kamu selalu ingat kalau ada seseorang yang senang melihat kamu bahagia 🤍";
+
+"buat aku, kamu itu cantik bukan cuma dari luar, "+
+"tapi dari cara kamu jadi diri kamu sendiri.<br><br>"+
+
+"semoga kamu selalu ingat, ada seseorang yang senang melihat kamu bahagia 🤍";
 
 
-function showLetter(){
 
-document.getElementById("letterText").innerHTML=letter;
+
+let char=0;
+
+
+
+function typeLetter(){
+
+
+if(char < message.length){
+
+
+document.getElementById("letterText").innerHTML =
+message.substring(0,char);
+
+
+char++;
+
+
+setTimeout(typeLetter,35);
+
 
 }
 
 
-setTimeout(showLetter,7000);
+
+}
+
+
 
 
 
@@ -419,29 +574,41 @@ setTimeout(showLetter,7000);
 
 function finish(){
 
+
 document.querySelector(".letter").style.display="none";
+
 
 document.querySelector(".ending").style.display="block";
 
 
-for(let x=0;x<25;x++){
 
-let h=document.createElement("div");
-
-h.className="heart";
-
-h.innerHTML="❤️";
-
-h.style.left=Math.random()*100+"%";
-
-h.style.bottom="0px";
+for(let i=0;i<35;i++){
 
 
-document.querySelector(".scene").appendChild(h);
+let heart=document.createElement("div");
+
+
+heart.className="heart";
+
+
+heart.innerHTML="❤️";
+
+
+heart.style.left=Math.random()*100+"%";
+
+
+heart.style.animationDuration=
+(2+Math.random()*3)+"s";
+
+
+document.querySelector(".scene").appendChild(heart);
+
+
 
 }
 
 
+
 }
 
 
@@ -449,32 +616,42 @@ document.querySelector(".scene").appendChild(h);
 
 
 
-
-// paw random
 
 setInterval(()=>{
 
-let p=document.createElement("div");
 
-p.className="paw";
-
-p.innerHTML="🐾";
-
-p.style.left=Math.random()*100+"%";
-
-p.style.animationDuration=
-(3+Math.random()*4)+"s";
+let paw=document.createElement("div");
 
 
-document.querySelector(".scene").appendChild(p);
+paw.className="paw";
+
+
+paw.innerHTML="🐾";
+
+
+paw.style.left=Math.random()*100+"%";
+
+
+paw.style.animationDuration=
+(3+Math.random()*3)+"s";
+
+
+
+document.querySelector(".scene").appendChild(paw);
+
 
 
 setTimeout(()=>{
-p.remove();
+
+paw.remove();
+
 },5000);
 
 
-},700);
+
+},800);
+
+
 
 
 
